@@ -1,6 +1,6 @@
 //IMPORT
 import * as PIXI from "pixi.js";
-import { Game } from "./game";
+import { Game } from "./level1";
 
 //ENEMY CLASS
 export class LetterB extends PIXI.Sprite {

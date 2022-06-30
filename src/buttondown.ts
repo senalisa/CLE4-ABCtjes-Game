@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { Game } from "./game";
+import { Game } from "./level1";
 
 import bgSound from "./sound/dino.mp3";
 

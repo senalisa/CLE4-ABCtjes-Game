@@ -1,11 +1,9 @@
-//IMPORT
+//IMPORT PIXI and Game
 import * as PIXI from "pixi.js";
-import { Game } from "./level1";
+import { Game } from "./level2";
 
-//GAME CLASS ENEMY (fish)
-export class Enemy extends PIXI.Sprite {
-
-  //GLOABALS
+//GAME CLASS ENEMY 
+export class Robot extends PIXI.Sprite {
   private game: Game;
   private speed: number;
   private hitbox: PIXI.Rectangle
@@ -16,12 +14,12 @@ export class Enemy extends PIXI.Sprite {
     this.game = game;
     this.pivot.set(0.5)
 
-    this.speed = 3;
+    this.speed = 2;
     this.x = Math.random() * window.innerWidth;
-    this.y = Math.random() * window.innerHeight + 50;
+    this.y = Math.random() * window.innerHeight;
 
     this.anchor.set(0.5);
-    this.scale.set(1, 1);
+    this.scale.set(0.23, 0.23);
 
     this.hitbox = new PIXI.Rectangle(0, 0, 60, 55)
 
@@ -29,13 +27,13 @@ export class Enemy extends PIXI.Sprite {
 
   //ANIMATION
   public update(delta: number) {
-    this.x += this.speed * delta;
-    this.y += Math.cos(this.x * 0.03) * 1.1;
+    this.y += this.speed * delta
+    this.x += Math.cos(this.x * 0.03) * 1.1;
 
     //Random spawn if appearing on screen again
-    if (this.x < -20) {
-      this.x = -20;
-      this.y = Math.random() * window.innerHeight;
+    if (this.y < -20) {
+      this.y = -20;
+      this.x = Math.random() * window.innerWidth;
     }
 
     this.keepInScreen();
@@ -48,8 +46,8 @@ export class Enemy extends PIXI.Sprite {
 
   //KEEP IN SCREEN
   private keepInScreen() {
-    if (this.getBounds().left > this.game.pixi.screen.right) {
-      this.x = -this.getBounds().width;
+    if (this.getBounds().top > this.game.pixi.screen.bottom) {
+      this.y = -this.getBounds().height;
     }
   }
 }
