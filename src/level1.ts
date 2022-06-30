@@ -238,11 +238,11 @@ export class Game {
     this.pixi.stage.addChild(this.letterH);
 
     //BACKGROUND RECTANGLE
-    this.bgRect = new PIXI.Graphics
-    this.bgRect.beginFill(0x47245A);
-    this.bgRect.drawRect(0, 0, window.innerWidth, 100)
-    this.bgRect.endFill();
-    this.pixi.stage.addChild(this.bgRect)
+    // this.bgRect = new PIXI.Graphics
+    // this.bgRect.beginFill(0x47245A);
+    // this.bgRect.drawRect(0, 0, window.innerWidth, 100)
+    // this.bgRect.endFill();
+    // this.pixi.stage.addChild(this.bgRect)
 
     //SCORE BOARD 2
     //BAR BACKGROUND
@@ -769,9 +769,19 @@ export class Game {
     this.endButton.x = 500
     this.endButton.y = 300
 
+    //Wijs door naar volgend level overzicht om level 2 te spelen
+    this.endButton.interactive = true
+    this.endButton.buttonMode = true
+    this.endButton.on('pointerdown', () => this.nextLevelPage())
+
     this.endSound.play();
 
     this.pixi.stage.addChild(this.endButton)
+  }
+
+  nextLevelPage() {
+    console.log("klik")
+    window.location.href = "levelpage.html"
   }
 
 
