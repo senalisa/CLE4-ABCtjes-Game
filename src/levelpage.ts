@@ -19,7 +19,7 @@ export class Levels {
     public background: PIXI.Sprite;
     public levelOne: PIXI.Sprite;
     public levelTwo: PIXI.sprite;
-    public keyLock: PIXI.sprite;
+    public keyLock: PIXI.Sprite;
 
     public startschermSound: HTMLAudioElement
     public startvoiceSound: HTMLAudioElement
@@ -49,7 +49,7 @@ export class Levels {
         this.loader.load(() => this.loadCompleted());
 
         //  MOUSE CURSOR TRACKER
-    document.addEventListener("mousemove", (e: MouseEvent) => this.mouseMoveHandler(e));
+        document.addEventListener("mousemove", (e: MouseEvent) => this.mouseMoveHandler(e));
 
     }
 
@@ -96,28 +96,28 @@ export class Levels {
 
         this.pixi.stage.addChild(this.levelTwo);
 
-         //LEVEL TWO LOCK
-         this.keyLock = new PIXI.Sprite(this.loader.resources["keyLockTexture"].texture!)
-         this.keyLock.scale.set(0.4, 0.4)
-         this.keyLock.x = 1030
-         this.keyLock.y = 340
-         
- 
-         this.pixi.stage.addChild(this.keyLock);
+        //LEVEL TWO LOCK
+        this.keyLock = new PIXI.Sprite(this.loader.resources["keyLockTexture"].texture!)
+        this.keyLock.scale.set(0.4, 0.4)
+        this.keyLock.x = 1030
+        this.keyLock.y = 340
+
+
+        this.pixi.stage.addChild(this.keyLock);
 
     }
 
     // MOUSE CURSOR
-  mouseMoveHandler(e: MouseEvent) {
-    var relativeY = e.clientY - this.pixi.screen.top
+    mouseMoveHandler(e: MouseEvent) {
+        var relativeY = e.clientY - this.pixi.screen.top
 
-    if (relativeY > 0 && relativeY < this.pixi.screen.height) {
-      this.startschermSound.play()
-      this.startvoiceSound.play()
+        if (relativeY > 0 && relativeY < this.pixi.screen.height) {
+            this.startschermSound.play()
+            this.startvoiceSound.play()
 
-      
+
+        }
     }
-  } 
 
     onClick() {
         console.log("klik")
