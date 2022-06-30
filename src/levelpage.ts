@@ -44,8 +44,9 @@ export class Levels {
 
         //LEVEL ONE
         this.levelOne = new PIXI.Sprite(this.loader.resources["levelOneTexture"].texture!)
-        this.levelOne.scale.set(0.9, 0.9)
-        this.levelOne.y = 120
+        this.levelOne.scale.set(0.7, 0.7)
+        this.levelOne.x = 50
+        this.levelOne.y = 100
         this.levelOne.interactive = true
         this.levelOne.buttonMode = true
         this.levelOne.on('pointerdown', () => this.onClick())
