@@ -1,3 +1,4 @@
 node_modules
-.parcel-chache
+.parcel-cache
+.parcel-cache/data.mb
 .cache
