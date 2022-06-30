@@ -56,12 +56,12 @@ export class Levels {
     loadCompleted() {
 
         //ADDING THE BACKGROUND
-        this.background = new PIXI.Sprite(this.loader.resources["bgTexture"].texture!);
-        this.background.scale.set(
-            window.innerWidth / this.background.getBounds().width,
-            window.innerHeight / this.background.getBounds().height
-        );
-        this.pixi.stage.addChild(this.background);
+        // this.background = new PIXI.Sprite(this.loader.resources["bgTexture"].texture!);
+        // this.background.scale.set(
+        //     window.innerWidth / this.background.getBounds().width,
+        //     window.innerHeight / this.background.getBounds().height
+        // );
+        // this.pixi.stage.addChild(this.background);
 
 
 
@@ -75,13 +75,13 @@ export class Levels {
         this.startvoiceSound.play();
 
         //LEVEL ONE
-        this.levelOne = new PIXI.Sprite(this.loader.resources["levelOneTexture"].texture!)
-        this.levelOne.scale.set(0.7, 0.7)
-        this.levelOne.x = 50
-        this.levelOne.y = 100
-        this.levelOne.interactive = true
-        this.levelOne.buttonMode = true
-        this.levelOne.on('pointerdown', () => this.onClick())
+        // this.levelOne = new PIXI.Sprite(this.loader.resources["levelOneTexture"].texture!)
+        // this.levelOne.scale.set(0.7, 0.7)
+        // this.levelOne.x = 50
+        // this.levelOne.y = 100
+        // this.levelOne.interactive = true
+        // this.levelOne.buttonMode = true
+        // this.levelOne.on('pointerdown', () => this.onClick())
 
         this.pixi.stage.addChild(this.levelOne);
 

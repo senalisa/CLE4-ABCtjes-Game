@@ -151,8 +151,8 @@ export class Game {
   loadCompleted() {
 
     //BACKGROUND
-    this.background = new Background(this.loader.resources["skyTexture"].texture!, this.pixi.screen.width, this.pixi.screen.height)
-    this.pixi.stage.addChild(this.background)
+    // this.background = new Background(this.loader.resources["skyTexture"].texture!, this.pixi.screen.width, this.pixi.screen.height)
+    // this.pixi.stage.addChild(this.background)
 
     //SOUNDS
     //DAMAGE SOUND
@@ -190,12 +190,12 @@ export class Game {
     this.HSound = this.loader.resources["HSound"].data!;
     this.HSound.volume = 1
 
-    //ENEMIES
-    for (let i = 0; i < 4; i++) {
-      let fish = new Enemy(this.loader.resources["enemyTexture"].texture!, this);
-      this.fishes.push(fish);
-      this.pixi.stage.addChild(fish);
-    }
+    // //ENEMIES
+    // for (let i = 0; i < 4; i++) {
+    //   let fish = new Enemy(this.loader.resources["enemyTexture"].texture!, this);
+    //   this.fishes.push(fish);
+    //   this.pixi.stage.addChild(fish);
+    // }
 
     //PLAYER HERO
     this.shark = new Hero(this.loader.resources["playerTexture"].texture!, this);
