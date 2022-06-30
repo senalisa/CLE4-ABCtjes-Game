@@ -39,14 +39,14 @@ import { Hero } from "./shark";
 import { HeroTwo } from "./sharktwo";
 
 //LETTERS from TS files
-import { LetterA } from "./letterA";
-import { LetterB } from "./letterB";
-import { LetterC } from "./letterC";
-import { LetterD } from "./letterD";
-import { LetterE } from "./letterE";
-import { LetterF } from "./letterF";
-import { LetterG } from "./letterG";
-import { LetterH } from "./letterH";
+import { LetterA } from "./letters/letterA";
+import { LetterB } from "./letters/letterB";
+import { LetterC } from "./letters/letterC";
+import { LetterD } from "./letters/letterD";
+import { LetterE } from "./letters/letterE";
+import { LetterF } from "./letters/letterF";
+import { LetterG } from "./letters/letterG";
+import { LetterH } from "./letters/letterH";
 
 //BACKGROUND
 import { Background } from "./background";
