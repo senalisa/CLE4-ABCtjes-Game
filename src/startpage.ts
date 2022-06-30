@@ -10,6 +10,10 @@ import startbuttonImage from "./images/startbutton.png";
 import heroImage from "./images/superhero.png"
 import crownImage from "./images/crown.png"
 
+//IMPORT AUDIO
+import startAudio from "url:./sound/startvoice.mp3"
+import bgAudio from "url:./sound/startschermsound.mp3"
+
 //GAME CLASS
 export class Game {
 
@@ -24,6 +28,9 @@ export class Game {
   public speed: number;
 
   public startButton: PIXI.Sprite;
+
+  public startAudio: HTMLAudioElement
+  public bgAudio: HTMLAudioElement
 
   //CONSTRUCTOR
   constructor() {
@@ -44,10 +51,13 @@ export class Game {
       .add("startbuttonTexture", startbuttonImage)
       .add("heroTexture", heroImage)
       .add("crownTexture", crownImage)
+      .add("startAudio", startAudio)
+      .add("bgSound", bgAudio)
 
     this.loader.load(() => this.loadCompleted());
 
-    this.speed = 3
+    //  MOUSE CURSOR TRACKER
+    document.addEventListener("mousemove", (e: MouseEvent) => this.mouseTracker(e));
 
   }
 
@@ -68,6 +78,14 @@ export class Game {
     crown.x = 550
     crown.y = 60
     this.pixi.stage.addChild(crown)
+
+    //SOUND
+    this.bgAudio = this.loader.resources["bgSound"].data!
+    this.bgAudio.volume = 0.4
+    this.startAudio = this.loader.resources["startAudio"].data!
+
+    this.bgAudio.play();
+    this.startAudio.play();
 
     //PLAYER HERO GIRL RAIESA
     let player = new PIXI.Sprite(this.loader.resources["playerTexture"].texture!);
@@ -95,9 +113,21 @@ export class Game {
 
   }
 
+
   goToLevelPage() {
     console.log("klik")
     window.location.href = "levelpage.html"
   }
 
-}
+  // MOUSE CURSOR
+  mouseTracker(e: MouseEvent) {
+    var relativeY = e.clientY - this.pixi.screen.top
+
+    if (relativeY > 0 && relativeY < this.pixi.screen.height) {
+      this.startAudio.play()
+      this.bgAudio.play()
+
+
+    }
+
+  }
