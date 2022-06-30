@@ -238,11 +238,11 @@ export class Game {
     this.pixi.stage.addChild(this.letterH);
 
     //BACKGROUND RECTANGLE
-    // this.bgRect = new PIXI.Graphics
-    // this.bgRect.beginFill(0x47245A);
-    // this.bgRect.drawRect(0, 0, window.innerWidth, 100)
-    // this.bgRect.endFill();
-    // this.pixi.stage.addChild(this.bgRect)
+    this.bgRect = new PIXI.Graphics
+    this.bgRect.beginFill(0x47245A);
+    this.bgRect.drawRect(0, 0, window.innerWidth, 100)
+    this.bgRect.endFill();
+    this.pixi.stage.addChild(this.bgRect)
 
     //SCORE BOARD 2
     //BAR BACKGROUND
@@ -781,7 +781,7 @@ export class Game {
 
   nextLevelPage() {
     console.log("klik")
-    window.location.href = "levelpage.html"
+    window.location.href = "levelpagetwo.html"
   }
 
 
