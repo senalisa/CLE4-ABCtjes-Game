@@ -18,7 +18,7 @@ export class Levels {
 
     public background: PIXI.Sprite;
     public levelOne: PIXI.Sprite;
-    public levelTwo: PIXI.sprite;
+    public levelTwo: PIXI.Sprite;
     public keyLock: PIXI.Sprite;
 
     public startschermSound: HTMLAudioElement
